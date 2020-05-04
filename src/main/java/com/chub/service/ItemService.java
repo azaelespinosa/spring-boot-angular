@@ -18,10 +18,9 @@ public class ItemService extends BaseService<ItemRepository, ItemEntity>{
 
     public ItemDto createItem(CreateItemRequest itemDto){
         Optional<ItemEntity> optionalEntity  = repository.findByItemId(itemDto.getItemId());
-        if (optionalEntity.isPresent()) {
+        if (optionalEntity.isPresent())
             throw new UnprocessableException("The article already exists");
-        }
-       return create(itemDto , ItemDto.class);
+        return create(itemDto , ItemDto.class);
     }
 
     public ItemDto updateItem(CreateItemRequest itemDto, Long id){
@@ -47,9 +46,8 @@ public class ItemService extends BaseService<ItemRepository, ItemEntity>{
 
     private ItemEntity getItemOr404(Long itemNo) {
         Optional<ItemEntity> optionalEntity  = repository.findByItemId(itemNo);
-        if (!optionalEntity.isPresent()) {
+        if (!optionalEntity.isPresent())
             throw new ResourceNotFoundException("ItemEntity","itemNo" , itemNo);
-        }
         return optionalEntity.get();
     }
 

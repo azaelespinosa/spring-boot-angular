@@ -24,11 +24,10 @@ public class ItemStockService  extends BaseService<ItemStockRepository, ItemStoc
     public ItemStockDto withdrawalQuantityByItemNo(WithdrawalQuantityRequest dto) {
         ItemStockEntity itemStock  = getItemStockOr404(dto.getItemId());
 
-        if (dto.getQty()>itemStock.getQty()) {
+        if (dto.getQty()>itemStock.getQty())
             throw new UnprocessableException("Incorrect amount to withdraw");
-        }
 
-        if(dto.getQty() - itemStock.getQty() < itemStock.getMinStock()){
+        if(itemStock.getQty() - dto.getQty()   < itemStock.getMinStock()){
             log.info("Minimum Stock validation.");
             //Send notification
         }
@@ -45,9 +44,9 @@ public class ItemStockService  extends BaseService<ItemStockRepository, ItemStoc
 
     private ItemStockEntity getItemStockOr404(Long itemNo) {
         Optional<ItemStockEntity> optionalEntity  = repository.findByItemId(itemNo);
-        if (!optionalEntity.isPresent()) {
+        if (!optionalEntity.isPresent())
             throw new ResourceNotFoundException("ItemStockEntity","itemNo" , itemNo);
-        }
+
         return optionalEntity.get();
     }
 
