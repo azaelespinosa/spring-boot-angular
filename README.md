@@ -7,6 +7,7 @@ http://localhost:8081/swagger-ui.html#/
 
 - Java 8
 - Spring boot
+- Spring security
 - Swagger 
 - REST API/JSON
 - Angular 8
@@ -15,6 +16,3 @@ http://localhost:8081/swagger-ui.html#/
 - Lombok
 
 Nota: Solo se muestra la lista de items en Angular.
-"# spring-boot-angular" 
-"# spring-boot-angular" 
-"# spring-boot-angular-chubb" 
