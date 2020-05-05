@@ -22,7 +22,7 @@ public class ItemEntity extends BaseEntity {
     @Column(name = "ID", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "ITEM_NO", insertable=false , updatable=false)
+    @Column(name = "ITEM_NO")
     private Long itemId;
 
     @Column(name = "AMOUNT")
@@ -36,7 +36,7 @@ public class ItemEntity extends BaseEntity {
 
     @OneToOne(cascade=CascadeType.ALL)
     @NotFound(action = NotFoundAction.IGNORE)
-    @JoinColumn(name = "ITEM_NO" , referencedColumnName = "ITEM_NO")
+    @JoinColumn(name = "ITEM_NO" , referencedColumnName = "ITEM_NO" , insertable=false , updatable=false)
     private ItemStockEntity itemStock;
 
 }

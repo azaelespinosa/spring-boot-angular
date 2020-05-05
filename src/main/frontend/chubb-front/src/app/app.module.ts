@@ -10,6 +10,9 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
 import { ItemService } from '../app/service/item.service';
 import { UserService } from '../app/service/user.service';
 import { AppComponent } from './app.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AppComponent } from './app.component';
     ItemListComponent,
     UserListComponent,
     UserFormComponent,
-    ItemFormComponent
+    ItemFormComponent,
+    MenuComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

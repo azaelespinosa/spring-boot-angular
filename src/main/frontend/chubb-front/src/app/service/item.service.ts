@@ -10,13 +10,16 @@ export class ItemService {
 
   private createItemUrl: string;
 
+
   constructor(private http: HttpClient) {
-    this.itemsUrl = 'http://localhost:8081/item/findall';
-    this.createItemUrl = 'http://localhost:8081/item';
+    //this.itemsUrl = 'http://localhost:8081/item/findall';
+    //this.createItemUrl = 'http://localhost:8081/item';
+    this.itemsUrl = '/item/findall';
+    this.createItemUrl = '/item';
+
   }
 
   public findAll(): Observable<Item[]> {
-    console.log( this.itemsUrl);
     return this.http.get<Item[]>(this.itemsUrl);
   }
 
